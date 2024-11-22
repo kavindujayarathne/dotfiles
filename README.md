@@ -1,4 +1,4 @@
-# Introduction
+# Dev Environment
 
 ![Screenshot of dev workflow](https://raw.githubusercontent.com/kavindujayarathne/dotfiles/main/assets/dev-workflow1.png)
 
@@ -7,7 +7,7 @@ This dotfiles are designed for a macOS environment to provide a streamlined work
 > [**!WARNING**]:
 > I do not blindly use any of the configurations or tools here, and I encourage you to review them before trying them out.
 
-# Installation and Setup
+## `Installation and Setup`
 
 Ensure the following tools are installed before clone the repository.
 
@@ -53,7 +53,7 @@ I use `Meslo LG Nerd Font` in my dev environment. You can use your preferred Ner
 brew install --cask font-meslo-lg-nerd-font
 ```
 
-## `Cloning the Repository and Installing tools`
+### Cloning the Repository and Installing tools
 
 Clone the repository using Git:
 ```bash
@@ -111,9 +111,9 @@ export HOMEBREW_BUNDLE_TAP_SKIP="tap1 tap2 ..."
 If you don't want to install vscode extensions, you can modify the **Brewfile** removing lines relevant to vscode and then run the `brew bundle install` command with specifying the **Brewfile** location.
 
 
-## `Setting up dotfiles`
+### Setting up dotfiles
 
-After installing all the dependencies, the next step would be to setting up all the dotfiles into your home directory. 
+After installing all the dependencies, the next step would be to setting up all the dotfiles into your home directory.
 
 I use GNU Stow to manage my dotfiles. You can follow one of below methods to setup dotfiles.
 
@@ -128,7 +128,7 @@ stow git   # Only symlinks git configuration
 stow zsh bash git .. 
 ```
 
-**Optional:** I have written a script (`script.sh`) to automate this process. You can use that script if needed.
+**Optional:** I have written a script named [dotfiles.sh](./scripts/dotfiles.sh) to automate this process. You can use that script if needed.
 
 >**Note:** This script uses `fzf`. You should have installed `fzf` before run this script.
 
@@ -137,9 +137,9 @@ brew install fzf
 ```
 
 ```bash
-cd ~/dotfiles
+cd ~/dotfiles/scripts
 
-./script.sh
+./dotfiles.sh
 ```
 
 ![Screenshot of script](https://raw.githubusercontent.com/kavindujayarathne/dotfiles/main/assets/script.png)
@@ -147,75 +147,47 @@ cd ~/dotfiles
 This script will symlinks all the dotfiles at their respective locations under home directory.
 
 
-## `Setting Up Sensitive Information`
-To store the sensitive information, like different credentials which you don't want visible in your public repository, you can maintain a separate file outside of your dotfiles repository.
+### Setting Up Sensitive Information
 
-File name could be anything. I call it `.extra`.
+I use a separate file called `.gitconfig_local` outside of the dotfiles repository to store the sensitive information, like git user credentials which I don't want visible inside `.gitconfig`.
 
-To create the `.extra` file, you can use the `extra.sh` script.
+You can use this script to dynamically generate the `.gitconfig_local` file.
 
-**Optional:** You can modify the script to include more credentials. Currently, it only handles git credentials.
+>**Note:** Make sure that path to the `.gitconfig_local` file is correctly added under the include section in your main `.gitconfig` file.
 
-### Script Overview
+#### Script Overview
 ```bash
+#!/usr/bin/env bash
 
 # Prompt for Git credentials
 read -p "Enter your Git author name: " git_author_name
 read -p "Enter your Git author email: " git_author_email
 read -p "Enter your Git username: " gh_user
 
-# Create the .extra file with the provided information
-cat <<EOF >~/.extra
+# Create the .gitconfig_local file with the provided information
+cat <<EOF >~/.gitconfig_local
 # Git credentials
-export GIT_AUTHOR_NAME="$git_author_name"
-export GIT_AUTHOR_EMAIL="$git_author_email"
-export GIT_USER="$gh_user"
+[user]
+    name = $git_author_name
+    email = $git_author_email
+[github]
+    user = $gh_user
 EOF
 
-echo ".extra file created."
+echo ".gitconfig_local file created."
 ```
 
-This script generates a .extra file with the credentials you provide, assigning them to environment variables.
-
-### Sourcing the `.extra` File
-
-You can source the `.extra` file manually:
-```shell
-source ~/.extra
-```
-
-Or, you can add this conditional statement to your preferred shell config file to source it automatically:
-
+#### Usage
 ```bash
-if [ -f ~/.extra ]; then
-    source ~/.extra
-fi
-```
+cd ~/dotfiles/scripts
 
-### Using Environment Variables in Config Files
-After sourcing the `.extra` file, you can use these environment variables in your main config files, keeping them clean and secure.
-
-```bash
-# ~/.gitconfig
-[user]
-	name = ${GIT_AUTHOR_NAME}
-	email = ${GIT_AUTHOR_EMAIL}
-[github]
-	user = ${GIH_USER}
+./gitconfig_local.sh
 ```
 
 
-### Usage
-```bash
-cd ~/dotfiles
+## `Configuration Details`
 
-./extra.sh
-```
-
-
-# Configuration Details
-
-## `Terminal Setup`
+### Terminal Setup
 
 **Terminal Emulator:** Alacritty
   - Theme: [Catppuccin Mocha.](https://github.com/catppuccin/alacritty) For setup instructions, follow the guidance provided in the repository.
@@ -264,7 +236,7 @@ cd ~/dotfiles
   - [git](https://git-scm.com) - Distributed revision control system
 
 
-## `Tmux Setup (Terminal Multiplexer)`
+### Tmux Setup (Terminal Multiplexer)
 
 **Configuration files:**
 
@@ -315,7 +287,7 @@ Focus panes:
   - `prefix + l`: Focus right
 
 
-## `Aerospace Tiling Window Manager Setup`
+### Aerospace Tiling Window Manager Setup
 
 **Configuration:** [aerospace.toml](./config/.config/aerospace/aerospace.toml)
 
@@ -337,7 +309,7 @@ Other Commands:
   - `Alt + Tab`: Switch between the current and previous workspaces
 
 
-## `Neovim Setup`
+### Neovim Setup
 I use the `LazyVim` starter template, for my Neovim configuration, which provides a partially built setup without having to build everything from scratch. 
 
 - Clone the starter template:
@@ -353,17 +325,17 @@ I use the `LazyVim` starter template, for my Neovim configuration, which provide
 - [nvim](./config/.config/nvim)
 
 
-# Contributing
+## `Contributing`
 
 Feel free to fork this repository and make it work for your setup. Pull requests for improvements and bug fixes are welcome, but please note that I may not accept changes that don't align with my personal preferences.
 
-# Licensing
+## `Licensing`
 This repository is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
 
-# Thanks to
+## `Thanks to`
 Thanks to the contributors and developers of the tools and open-source projects referenced in this repository, and generally to everyone who open-sources their dotfiles.
 
-## `Inspiration and Resources`
+### Inspiration and Resources
 Special thanks to the individuals below for inspiring and providing useful ideas for this project:
 
 - **[Mathias Bynens](https://github.com/mathiasbynens)** for his [sensible hacker defaults for macOS](https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
