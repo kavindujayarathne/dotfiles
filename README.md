@@ -1,10 +1,10 @@
 # Dev Environment
 
-![Screenshot of dev workflow](https://raw.githubusercontent.com/kavindujayarathne/dotfiles/main/assets/dev-workflow1.png)
+![Screenshot of dev workflow](https://raw.githubusercontent.com/kavindujayarathne/dotfiles/main/assets/dev-workflow2.png)
 
 This dotfiles are designed for a macOS environment to provide a streamlined workflow and consistent developer experience across different machines. 
 
-> [**!WARNING**]:
+> [!WARNING]
 > I do not blindly use any of the configurations or tools here, and I encourage you to review them before trying them out.
 
 ## `Installation and Setup`
@@ -128,10 +128,11 @@ stow git   # Only symlinks git configuration
 stow zsh bash git .. 
 ```
 
-**Optional:** I have written a script named [dotfiles.sh](./scripts/dotfiles.sh) to automate this process. You can use that script if needed.
+> [!TIP]
+> I have written a script named [dotfiles.sh](./scripts/dotfiles.sh) to automate this process. You can use that script if needed.
 
->**Note:** This script uses `fzf`. You should have installed `fzf` before run this script.
-
+> [!NOTE]
+> This script uses `fzf`. You should have installed `fzf` before run this script.
 ```bash
 brew install fzf
 ```
@@ -153,7 +154,8 @@ I use a separate file called `.gitconfig_local` outside of the dotfiles reposito
 
 You can use this script to dynamically generate the `.gitconfig_local` file.
 
->**Note:** Make sure that path to the `.gitconfig_local` file is correctly added under the include section in your main `.gitconfig` file.
+> [!NOTE]
+> Make sure that path to the `.gitconfig_local` file is correctly added under the include section in your main `.gitconfig` file.
 
 #### Script Overview
 ```bash
