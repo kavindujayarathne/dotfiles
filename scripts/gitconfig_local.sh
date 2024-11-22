@@ -5,12 +5,14 @@ read -p "Enter your Git author name: " git_author_name
 read -p "Enter your Git author email: " git_author_email
 read -p "Enter your Git username: " gh_user
 
-# Create the .extra file with the provided information
-cat <<EOF >~/.extra
+# Create the .gitconfig_local file with the provided information
+cat <<EOF >~/.gitconfig_local
 # Git credentials
-export GIT_AUTHOR_NAME="$git_author_name"
-export GIT_AUTHOR_EMAIL="$git_author_email"
-export GIT_USER="$gh_user"
+[user]
+    name = $git_author_name
+    email = $git_author_email
+[github]
+    user = $gh_user
 EOF
 
-echo ".extra file created."
+echo ".gitconfig_local file created."
