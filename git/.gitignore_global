@@ -1,4 +1,15 @@
+# OS-specific files
 .DS_Store
-.log
+Thumbs.db
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Node.js dependencies
 node_modules/
 
