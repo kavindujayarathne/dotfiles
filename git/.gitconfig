@@ -1,0 +1,6 @@
+[init]
+	defaultBranch = main
+[core]
+  excludesfile = ~/.gitignore_global
+[include]
+  path = ~/.gitconfig.local
