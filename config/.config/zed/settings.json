@@ -17,7 +17,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Andromeda"
+    "dark": "Catppuccin Mocha"
   },
 
   "terminal": {
