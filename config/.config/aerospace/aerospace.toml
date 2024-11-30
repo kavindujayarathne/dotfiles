@@ -102,10 +102,6 @@ alt-shift-l = 'move right'
 #TODO: Find what this is?
 #alt-shift-n = 'split opposite'
 
-#alt-shift-minus = 'resize smart -50'
-#alt-shift-equal = 'resize smart +50'
-#alt-shift-0 = 'balance-sizes'
-
 # Full Screen
 alt-f= 'fullscreen'
 
@@ -187,14 +183,14 @@ alt-p = 'workspace 5'
 # alt-shift-z = 'move-node-to-workspace Z'
 
 # Custom Keybindings for move node's to workspaces 
-alt-shift-y = ['move-node-to-workspace 1', 'workspace 1']
-alt-shift-u = ['move-node-to-workspace 2', 'workspace 2']
-alt-shift-i = ['move-node-to-workspace 3', 'workspace 3']
-alt-shift-o = ['move-node-to-workspace 4', 'workspace 4']
-alt-shift-p = ['move-node-to-workspace 5', 'workspace 5']
+# alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window' # if you want to handle both in single command
+# alt-shift-y = ['move-node-to-workspace 1', 'workspace 1'] # if you want to use more flexible way
 
-# Close windows
-alt-w = 'close'
+alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window'
+alt-shift-u = 'move-node-to-workspace 2 --focus-follows-window'
+alt-shift-i = 'move-node-to-workspace 3 --focus-follows-window'
+alt-shift-o = 'move-node-to-workspace 4 --focus-follows-window'
+alt-shift-p = 'move-node-to-workspace 5 --focus-follows-window'
 
 # Workspace Back and Forth
 alt-tab = 'workspace-back-and-forth'
@@ -202,8 +198,17 @@ alt-tab = 'workspace-back-and-forth'
 # Move workspace to monitor
 # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-# Temp disable aerospace
-#alt-d = 'enable toggle'
+# Launch applications using AeroSpace
+# -n = Open a new instance of an application
+# -a = To target the application directly
+
+alt-m = 'exec-and-forget open -a /System/Applications/Mail.app'
+alt-b = 'exec-and-forget open -a /Applications/"Firefox Developer Edition.app"'
+alt-t = 'exec-and-forget open -a /Applications/Alacritty.app'
+alt-e = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
+alt-n = 'exec-and-forget open -a /Applications/Notion.app'
+alt-s = 'exec-and-forget open -a /Applications/Safari.app'
+alt-a = 'exec-and-forget open -a /System/Applications/Utilities/"Activity Monitor.app"'
 
 # Switch between different modes
 alt-shift-semicolon = 'mode service'
@@ -234,6 +239,35 @@ esc = 'mode main'
 # s = ['layout sticky tiling', 'mode main']
 
 # To open specific apps on specific workspaces
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 5'
+
+# Applications out of normal layout
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
