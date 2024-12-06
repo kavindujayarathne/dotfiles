@@ -7,15 +7,15 @@ local map = vim.keymap.set
 map("i", "jj", "<Esc>", { desc = "Exit Insert Mode" })
 
 -- Move Lines
-map("n", "<C-S-n>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-map("n", "<C-S-m>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+-- map("n", "<C-S-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+-- map("n", "<C-S-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
 -- map("i", "<C-S-n>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 -- map("i", "<C-S-m>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 -- map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 -- map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
 -- Swap Windows Around
-map("n", "<leader>wh", "<C-w>H", { desc = "Move window to the left" })
-map("n", "<leader>wl", "<C-w>L", { desc = "Move window to the right" })
-map("n", "<leader>wk", "<C-w>K", { desc = "Move window to the top" })
-map("n", "<leader>wj", "<C-w>J", { desc = "Move window to the bottom" })
+-- map("n", "<leader>wh", "<C-w>H", { desc = "Move window to the left" })
+-- map("n", "<leader>wl", "<C-w>L", { desc = "Move window to the right" })
+-- map("n", "<leader>wk", "<C-w>K", { desc = "Move window to the top" })
+-- map("n", "<leader>wj", "<C-w>J", { desc = "Move window to the bottom" })
