@@ -202,13 +202,13 @@ alt-tab = 'workspace-back-and-forth'
 # -n = Open a new instance of an application
 # -a = To target the application directly
 
-alt-m = 'exec-and-forget open -a /System/Applications/Mail.app'
-alt-b = 'exec-and-forget open -a /Applications/"Firefox Developer Edition.app"'
-alt-t = 'exec-and-forget open -a /Applications/Alacritty.app'
-alt-e = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
-alt-n = 'exec-and-forget open -a /Applications/Notion.app'
-alt-s = 'exec-and-forget open -a /Applications/Safari.app'
-alt-a = 'exec-and-forget open -a /System/Applications/Utilities/"Activity Monitor.app"'
+alt-m = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Mail..." && open -a /System/Applications/Mail.app'
+alt-b = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Firefox Developer Edition..." && open -a /Applications/"Firefox Developer Edition.app"'
+alt-t = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app'
+alt-e = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Finder..." && open -a /System/Library/CoreServices/Finder.app'
+alt-n = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Notion..." && open -a /Applications/Notion.app'
+alt-s = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app'
+alt-a = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Activity Monitor..." && open -a /System/Applications/Utilities/"Activity Monitor.app"'
 
 # Switch between different modes
 alt-shift-semicolon = 'mode service'
@@ -253,6 +253,10 @@ run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]

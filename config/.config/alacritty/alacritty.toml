@@ -31,7 +31,7 @@ size = 16
 bindings = [
   { key = "H",  mods = "Control|Shift", chars = "\u001b[D" }, # Backward Navigation
   { key = "L", mods = "Control|Shift", chars = "\u001b[C" },   # Forward Navigation
-  { key = "Space",  mods = "Control", action = "ToggleViMode" },
+  # { key = "Space",  mods = "Control", action = "ToggleViMode" },
   # { key = "Alt", mods = "None", chars = "\u001b[C" } # Send <C-S-l>
 ]
 
