@@ -21,6 +21,11 @@ esac
 # fi
 
 # -----------------------------------------------------------------------------
+# .env
+# -----------------------------------------------------------------------------
+export $(grep -v '^#' ~/.env | xargs)
+
+# -----------------------------------------------------------------------------
 # Starship (prompt customization)
 # -----------------------------------------------------------------------------
 eval "$(starship init zsh)"
@@ -42,6 +47,15 @@ alias nv="nvim"
 alias ll="ls -al"
 alias la="ls -a"
 alias caf="caffeinate -d"
+
+function nvs() {
+  local config=$(fd --max-depth 1 --type d --glob 'nvim-*' ~/.config | xargs -n 1 basename | \
+    fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
+
+  [[ -z $config ]] && echo "No config selected" && return
+
+  NVIM_APPNAME=$config nvim "$@"
+}
 
 # Don't ask if user is sure when running rm with wildcards
 setopt rmstarsilent
@@ -71,6 +85,8 @@ setopt hist_verify
 # Plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+
+bindkey -e
 bindkey '^l' autosuggest-accept
 # bindkey '^e' autosuggest-execute
 bindkey '^f' autosuggest-fetch
@@ -78,7 +94,6 @@ bindkey '^f' autosuggest-fetch
 bindkey '^e' vi-forward-word
 # bindkey '^k' up-line-or-search
 # bindkey '^j' down-line-or-search
-
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
