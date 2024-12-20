@@ -27,8 +27,6 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
 
-    { import = "lazyvim.plugins.extras.ui.alpha" },
-
     -- import/override with any extra plugins here
     { import = "plugins" },
   },
