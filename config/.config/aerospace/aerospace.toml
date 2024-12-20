@@ -106,40 +106,6 @@ alt-shift-l = 'move right'
 alt-f= 'fullscreen'
 
 # Workspaces
-# In you config, you can drop down the workspaces that you dont need!
-# alt-1 = 'workspace 1'
-# alt-2 = 'workspace 2'
-# alt-3 = 'workspace 3'
-# alt-4 = 'workspace 4'
-# alt-5 = 'workspace 5'
-# alt-6 = 'workspace 6'
-# alt-7 = 'workspace 7'
-# alt-8 = 'workspace 8'
-# alt-9 = 'workspace 9'
-# alt-a = 'workspace A' 
-# alt-b = 'workspace B'
-# alt-c = 'workspace C'
-# alt-d = 'workspace D'
-# alt-e = 'workspace E'
-# alt-f = 'workspace F'
-# alt-g = 'workspace G'
-# alt-i = 'workspace I'
-# alt-m = 'workspace M'
-# alt-n = 'workspace N'
-# alt-o = 'workspace O'
-# alt-p = 'workspace P'
-# alt-q = 'workspace Q'
-# alt-r = 'workspace R'
-# alt-s = 'workspace S'
-# alt-t = 'workspace T'
-# alt-u = 'workspace U'
-# alt-v = 'workspace V'
-# alt-w = 'workspace W'
-# alt-x = 'workspace X'
-# alt-y = 'workspace Y'
-# alt-z = 'workspace Z'
-
-# Custom Keybindings for workspaces
 alt-y = 'workspace 1'
 alt-u = 'workspace 2'
 alt-i = 'workspace 3'
@@ -147,50 +113,20 @@ alt-o = 'workspace 4'
 alt-p = 'workspace 5'
 
 # Move node to workspaces
-#TODO: There might be some scenarios where i dont want to move to the relevant workspace as i move node to a specific workspace. 
-# handle that as well
-
-# alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
-# alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
-# alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
-# alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
-# alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
-# alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
-# alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
-#alt-shift-8 = 'move-node-to-workspace 8'
-#alt-shift-9 = 'move-node-to-workspace 9'
-# alt-shift-a = 'move-node-to-workspace A'
-# alt-shift-b = 'move-node-to-workspace B'
-# alt-shift-c = 'move-node-to-workspace C'
-# alt-shift-d = 'move-node-to-workspace D'
-# alt-shift-e = 'move-node-to-workspace E'
-# alt-shift-f = 'move-node-to-workspace F'
-# alt-shift-g = 'move-node-to-workspace G'
-# alt-shift-i = 'move-node-to-workspace I'
-# alt-shift-m = 'move-node-to-workspace M'
-# alt-shift-n = 'move-node-to-workspace N'
-# alt-shift-o = 'move-node-to-workspace O'
-# alt-shift-p = 'move-node-to-workspace P'
-# alt-shift-q = 'move-node-to-workspace Q'
-# alt-shift-r = 'move-node-to-workspace R'
-# alt-shift-s = 'move-node-to-workspace S'
-# alt-shift-t = 'move-node-to-workspace T'
-# alt-shift-u = 'move-node-to-workspace U'
-# alt-shift-v = 'move-node-to-workspace V'
-# alt-shift-w = 'move-node-to-workspace W'
-# alt-shift-x = 'move-node-to-workspace X'
-# alt-shift-y = 'move-node-to-workspace Y'
-# alt-shift-z = 'move-node-to-workspace Z'
-
-# Custom Keybindings for move node's to workspaces 
 # alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window' # if you want to handle both in single command
 # alt-shift-y = ['move-node-to-workspace 1', 'workspace 1'] # if you want to use more flexible way
+# ['move-node-to-workspace 1', 'workspace 1']
+# alt-shift-y = [ 'move-node-to-workspace 1', 'workspace 1' ]
+# alt-shift-u = [ 'move-node-to-workspace 2', 'workspace 2' ]
+# alt-shift-i = [ 'move-node-to-workspace 3', 'workspace 3' ]
+# alt-shift-o = [ 'move-node-to-workspace 4', 'workspace 4' ]
+# alt-shift-p = [ 'move-node-to-workspace 5', 'workspace 5' ]
 
-alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window'
-alt-shift-u = 'move-node-to-workspace 2 --focus-follows-window'
-alt-shift-i = 'move-node-to-workspace 3 --focus-follows-window'
-alt-shift-o = 'move-node-to-workspace 4 --focus-follows-window'
-alt-shift-p = 'move-node-to-workspace 5 --focus-follows-window'
+alt-shift-y = 'move-node-to-workspace 1'
+alt-shift-u = 'move-node-to-workspace 2'
+alt-shift-i = 'move-node-to-workspace 3'
+alt-shift-o = 'move-node-to-workspace 4'
+alt-shift-p = 'move-node-to-workspace 5'
 
 # Workspace Back and Forth
 alt-tab = 'workspace-back-and-forth'
@@ -198,10 +134,13 @@ alt-tab = 'workspace-back-and-forth'
 # Move workspace to monitor
 # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+# Keybindings for different modes
+alt-shift-semicolon = 'mode service'
+alt-r = 'mode resize'
+
 # Launch applications using AeroSpace
 # -n = Open a new instance of an application
 # -a = To target the application directly
-
 alt-m = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Mail..." && open -a /System/Applications/Mail.app'
 alt-b = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Firefox Developer Edition..." && open -a /Applications/"Firefox Developer Edition.app"'
 alt-t = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app'
@@ -209,34 +148,6 @@ alt-e = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launchin
 alt-n = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Notion..." && open -a /Applications/Notion.app'
 alt-s = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app'
 alt-a = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Activity Monitor..." && open -a /System/Applications/Utilities/"Activity Monitor.app"'
-
-# Switch between different modes
-alt-shift-semicolon = 'mode service'
-alt-r = 'mode resize'
-
-# Keybindings for service mode
-[mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-# backspace = ['close-all-windows-but-current', 'mode main']
-
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
-# Keybinding for resize mode
-[mode.resize.binding]
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
-0 = 'balance-sizes'
-esc = 'mode main'
-
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-# s = ['layout sticky tiling', 'mode main']
 
 # To open specific apps on specific workspaces
 [[on-window-detected]]
@@ -253,10 +164,6 @@ run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-if.app-id = 'com.anthropic.claudefordesktop'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
@@ -287,3 +194,26 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.QuickTimePlayerX'
 run = 'layout floating'
+
+# Modes
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+# backspace = ['close-all-windows-but-current', 'mode main']
+
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+0 = 'balance-sizes'
+esc = 'mode main'
+
+# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+# s = ['layout sticky tiling', 'mode main']

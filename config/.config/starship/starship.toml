@@ -9,13 +9,17 @@ format = """$custom $directory$character"""
 # Right prompt
 right_format = """$all"""
 
+# Default is 500ms
+# command_timeout = 1000
+
 [custom.os]
 #command = 'uname -s'
 when = 'true'
 format = ''
 
 [character]
-success_symbol = '[➜](bold teal)'
+# success_symbol = '[➜](bold teal)'
+success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
 vimcmd_symbol = '[➜](dimmed peach)'
 
