@@ -11,16 +11,17 @@ TERM = "xterm-256color"
 padding = {x = 10, y =10}
 #dynamic_padding = true | false
 decorations = "Buttonless"
-opacity = 0.8
-blur = true
+# opacity = 0.8
+opacity = 0.7
+# blur = true
 option_as_alt = "both"
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
-size = 16
+size = 15
 
 # Keybindings
-[keyboard]
+# [keyboard]
 # --- Default ---
 # Control + h = Backspace
 # Control + d = Forward deletion
@@ -28,12 +29,12 @@ size = 16
 # Control + g = New prompt
 # Control + l = Clear terminal
 # Control + u = Clear entire command line
-bindings = [
-  { key = "H",  mods = "Control|Shift", chars = "\u001b[D" }, # Backward Navigation
-  { key = "L", mods = "Control|Shift", chars = "\u001b[C" },   # Forward Navigation
-  # { key = "Space",  mods = "Control", action = "ToggleViMode" },
-  # { key = "Alt", mods = "None", chars = "\u001b[C" } # Send <C-S-l>
-]
+# bindings = [
+#   { key = "H",  mods = "Control|Shift", chars = "\u001b[D" }, # Backward Navigation
+#   { key = "L", mods = "Control|Shift", chars = "\u001b[C" },   # Forward Navigation
+#   { key = "Space",  mods = "Control", action = "ToggleViMode" },
+#   { key = "Alt", mods = "None", chars = "\u001b[C" } # Send <C-S-l>
+# ]
 
 [debug]
 render_timer = false

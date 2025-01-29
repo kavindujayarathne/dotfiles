@@ -1,0 +1,176 @@
+{
+  "window.commandCenter": true,
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.automationProfile.osx": {
+    "path": "/bin/zsh",
+    "args": []
+  },
+
+  // Editor settings
+  "editor.fontSize": 13,
+  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.lineHeight": 20,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.suggestSelection": "first",
+  "editor.lineNumbers": "relative",
+
+  // Workbench settings
+  // "workbench.colorTheme": "One Dark Pro",
+  // "workbench.iconTheme": "material-icon-theme",
+  // "workbench.startupEditor": "none",
+
+  // Files settings
+  // "files.autoSave": "afterDelay",
+  // "files.autoSaveDelay": 1000,
+  // "files.trimTrailingWhitespace": true,
+  // "files.insertFinalNewline": true,
+  // "files.associations": {
+  //     "*.js": "javascript",
+  //     "*.jsx": "javascriptreact",
+  //     "*.ts": "typescript",
+  //     "*.tsx": "typescriptreact",
+  //     "*.json": "json",
+  //     "*.html": "html",
+  //     "*.css": "css",
+  //     "*.scss": "scss",
+  //     "*.vue": "vue",
+  //     "*.md": "markdown"
+  // },
+
+  // Terminal settings
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "MesloLGL Nerd Font",
+  // "terminal.integrated.fontWeight": "normal",
+  // "terminal.integrated.fontWeightBold": "bold",
+  // "terminal.integrated.fontWeightLight": "normal",
+  // "terminal.integrated.fontWeightMedium": "bold"
+
+  // Git settings
+  // "git.enableSmartCommit": true,
+  // "git.autofetch": true,
+
+  // Explorer settings
+  // "explorer.openEditors.visible": 0,
+  // "explorer.compact.indent": "none",
+  // "explorer.compact.openFiles.enabled": false,
+  // "explorer.compact.openFolders.enabled": false,
+  // "explorer.confirmDelete": false,
+  // "explorer.confirmDragAndDrop": false,
+
+  // Prettier
+  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][html][css][scss][markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Vim specific keybindings
+  "vim.leader": " ",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "y": true,
+    "<C-l>": true,
+    "<C-h>": true
+    // "<C-a>": false,
+    // "<C-f>": false
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.color": "rgba(73, 66, 116, 0.4)",
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "w", "h"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "w", "q"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": ["<leader>", "w", "d"],
+      "commands": ["workbench.action.closeGroup"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": [
+        "workbench.action.togglePanel",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["]"],
+      "after": ["$"]
+    },
+    {
+      "before": ["["],
+      "after": ["^"]
+    }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentlines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["]"],
+      "after": ["$"]
+    },
+    {
+      "before": ["["],
+      "after": ["^"]
+    }
+  ],
+
+  "vim.operatorPendingModeKeyBindings": []
+}

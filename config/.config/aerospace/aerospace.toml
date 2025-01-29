@@ -3,11 +3,11 @@ after-login-command = []
 
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+# after-startup-command = ['exec-and-forget sketchybar']
 
-# Adding borders around windows
-# after-startup-command = [
-#   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+# Notify Sketchybar about workspace change
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 # ]
 
 # Start AeroSpace at login
@@ -115,18 +115,17 @@ alt-p = 'workspace 5'
 # Move node to workspaces
 # alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window' # if you want to handle both in single command
 # alt-shift-y = ['move-node-to-workspace 1', 'workspace 1'] # if you want to use more flexible way
-# ['move-node-to-workspace 1', 'workspace 1']
-# alt-shift-y = [ 'move-node-to-workspace 1', 'workspace 1' ]
-# alt-shift-u = [ 'move-node-to-workspace 2', 'workspace 2' ]
-# alt-shift-i = [ 'move-node-to-workspace 3', 'workspace 3' ]
-# alt-shift-o = [ 'move-node-to-workspace 4', 'workspace 4' ]
-# alt-shift-p = [ 'move-node-to-workspace 5', 'workspace 5' ]
+alt-shift-y = [ 'move-node-to-workspace 1', 'workspace 1' ]
+alt-shift-u = [ 'move-node-to-workspace 2', 'workspace 2' ]
+alt-shift-i = [ 'move-node-to-workspace 3', 'workspace 3' ]
+alt-shift-o = [ 'move-node-to-workspace 4', 'workspace 4' ]
+alt-shift-p = [ 'move-node-to-workspace 5', 'workspace 5' ]
 
-alt-shift-y = 'move-node-to-workspace 1'
-alt-shift-u = 'move-node-to-workspace 2'
-alt-shift-i = 'move-node-to-workspace 3'
-alt-shift-o = 'move-node-to-workspace 4'
-alt-shift-p = 'move-node-to-workspace 5'
+# alt-shift-y = 'move-node-to-workspace 1'
+# alt-shift-u = 'move-node-to-workspace 2'
+# alt-shift-i = 'move-node-to-workspace 3'
+# alt-shift-o = 'move-node-to-workspace 4'
+# alt-shift-p = 'move-node-to-workspace 5'
 
 # Workspace Back and Forth
 alt-tab = 'workspace-back-and-forth'
@@ -142,12 +141,35 @@ alt-r = 'mode resize'
 # -n = Open a new instance of an application
 # -a = To target the application directly
 alt-m = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Mail..." && open -a /System/Applications/Mail.app'
-alt-b = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Firefox Developer Edition..." && open -a /Applications/"Firefox Developer Edition.app"'
+alt-b = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Zen Browser..." && open -a /Applications/"Zen Browser.app"'
 alt-t = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app'
 alt-e = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Finder..." && open -a /System/Library/CoreServices/Finder.app'
 alt-n = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Notion..." && open -a /Applications/Notion.app'
 alt-s = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app'
 alt-a = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Activity Monitor..." && open -a /System/Applications/Utilities/"Activity Monitor.app"'
+
+# Modes
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+# backspace = ['close-all-windows-but-current', 'mode main']
+
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+0 = 'balance-sizes'
+esc = 'mode main'
+
+# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+# s = ['layout sticky tiling', 'mode main']
 
 # To open specific apps on specific workspaces
 [[on-window-detected]]
@@ -159,11 +181,19 @@ if.app-id = 'org.mozilla.firefoxdeveloperedition'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
@@ -195,25 +225,6 @@ run = 'layout floating'
 if.app-id = 'com.apple.QuickTimePlayerX'
 run = 'layout floating'
 
-# Modes
-[mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-# backspace = ['close-all-windows-but-current', 'mode main']
-
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
-[mode.resize.binding]
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
-0 = 'balance-sizes'
-esc = 'mode main'
-
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-# s = ['layout sticky tiling', 'mode main']
+[[on-window-detected]]
+if.app-id = 'com.apple.PhotoBooth'
+run = 'layout floating'

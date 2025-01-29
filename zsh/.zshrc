@@ -157,11 +157,14 @@ alias grst-s="git reset --soft"  # git reset --soft <commit hash>
 alias grst-h="git reset --hard"  # git reset --hard <commit hash>
 alias gmg="git merge"
 alias gmg-a="git merge --abort"
+alias gd="git diff"
 
 # -----------------------------------------------------------------------------
 # FZF (better search)
 # -----------------------------------------------------------------------------
 source <(fzf --zsh)
+
+alias lls="ll | fzf"
 
 # -----------------------------------------------------------------------------
 # eza (better version of ls)
