@@ -9,19 +9,30 @@
 
 ######## Recent capture filters (latest first), cannot be altered through command line ########
 
+recent.capture_filter: port 443
 recent.capture_filter: port 53
+recent.capture_filter.en0: port 443
 recent.capture_filter.en0: port 53
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
-recent.display_filter: git
+recent.display_filter: dns
+recent.display_filter: telnet
+recent.display_filter: tcp.port
+recent.display_filter: tcp.port == 23
+recent.display_filter: ip.src
+recent.display_filter: tcp.port == 5137
+recent.display_filter: bootp || dhcp
+recent.display_filter: _ws.col.info == "443"
+recent.display_filter: _ws.col.info == "443 → 61046 [ACK] Seq=6397 Ack=2214 Win=32256 Len=0 TSval=1750860145 TSecr=12700234"
+recent.display_filter: tcp
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 5
-gui.geometry_main_y: 39
-gui.geometry_main_width: 1430
-gui.geometry_main_height: 859
+gui.geometry_main_x: 30
+gui.geometry_main_y: 34
+gui.geometry_main_width: 1410
+gui.geometry_main_height: 869
 
 # Main window maximized.
 # true or false (case-insensitive).
@@ -29,7 +40,7 @@ gui.geometry_main_maximized: false
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb0003000000000005000000270000059a0000039d00000005000000430000059a0000039d000000000000000005a000000005000000430000059a0000039d
+gui.geometry_main: 01d9d0cb000300000000001e000000220000059f000003a20000001e0000003e0000059f000003a2000000000000000005a00000001e0000003e0000059f000003a2
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
@@ -84,6 +95,50 @@ gui.geom.ExpertInfoDialog.height: 859
 gui.geom.ExpertInfoDialog.maximized: false
 # Qt Geometry State (hex byte string).
 gui.geom.ExpertInfoDialog.qt_geometry: 01d9d0cb00030000000001c9000000220000052200000398000001c90000003e0000052200000398000000000000000005a0000001c90000003e0000052200000398
+
+# Geometry and maximized state of PacketDialog window.
+# Decimal integers.
+gui.geom.PacketDialog.x: 108
+gui.geom.PacketDialog.y: 34
+gui.geom.PacketDialog.width: 1331
+gui.geom.PacketDialog.height: 869
+# true or false (case-insensitive).
+gui.geom.PacketDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.PacketDialog.qt_geometry: 01d9d0cb000300000000006c000000220000059e000003a20000006c0000003e0000059e000003a2000000000000000005a00000006c0000003e0000059e000003a2
+
+# Geometry and maximized state of DNS Servers window.
+# Decimal integers.
+gui.geom.DNS Servers.x: 427
+gui.geom.DNS Servers.y: 295
+gui.geom.DNS Servers.width: 566
+gui.geom.DNS Servers.height: 403
+# true or false (case-insensitive).
+gui.geom.DNS Servers.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.DNS Servers.qt_geometry: 01d9d0cb00030000000001ab00000127000003e0000002d5000001ab00000143000003e0000002d5000000000000000005a0000001ab00000143000003e0000002d5
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: 380
+gui.geom.PreferencesDialog.y: 231
+gui.geom.PreferencesDialog.width: 774
+gui.geom.PreferencesDialog.height: 554
+# true or false (case-insensitive).
+gui.geom.PreferencesDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.PreferencesDialog.qt_geometry: 01d9d0cb000300000000017c000000e7000004810000032c0000017c00000103000004810000032c000000000000000005a00000017c00000103000004810000032c
+
+# Geometry and maximized state of FollowStreamDialog window.
+# Decimal integers.
+gui.geom.FollowStreamDialog.x: 234
+gui.geom.FollowStreamDialog.y: 34
+gui.geom.FollowStreamDialog.width: 953
+gui.geom.FollowStreamDialog.height: 859
+# true or false (case-insensitive).
+gui.geom.FollowStreamDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.FollowStreamDialog.qt_geometry: 01d9d0cb00030000000000ea00000022000004a200000398000000ea0000003e000004a200000398000000000000000005a0000000ea0000003e000004a200000398
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.

@@ -48,6 +48,8 @@ alias ll="ls -al"
 alias la="ls -a"
 alias caf="caffeinate -d"
 
+# Networking aliases
+
 function nvs() {
   local config=$(fd --max-depth 1 --type d --glob 'nvim-*' ~/.config | xargs -n 1 basename | \
     fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
@@ -81,6 +83,9 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
+
+# To remove histroy when logout
+# export HISTSIZE=0
 
 # Plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -215,9 +220,17 @@ alias bins="brew install"
 alias buins="brew uninstall"
 
 # Env variables
-if [[ ":$PATH:" != *":/opt/homebrew/opt/node@22/bin:"* ]]; then
-    export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
-fi
+paths_to_add=(
+    "/opt/homebrew/opt/node@22/bin"
+    "/opt/homebrew/opt/python@3.13/libexec/bin"
+    "/opt/homebrew/opt/curl/bin"
+    # Add more paths here as needed
+)
+
+# Loop through each path and add it to PATH if not already present
+for dir in "${paths_to_add[@]}"; do
+    [[ ":$PATH:" != *":$dir:"* ]] && export PATH="$dir:$PATH"
+done
 
 # For compilers to find node@22 you may need to set:
 # export LDFLAGS="-L/opt/homebrew/opt/node@22/lib"
