@@ -119,6 +119,8 @@ alt-o = 'workspace 4'
 alt-p = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # Move node to workspaces
 # alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window' # if you want to handle both in single command
@@ -130,6 +132,8 @@ alt-shift-o = [ 'move-node-to-workspace 4', 'workspace 4' ]
 alt-shift-p = [ 'move-node-to-workspace 5', 'workspace 5' ]
 alt-shift-6 = [ 'move-node-to-workspace 6', 'workspace 6' ]
 alt-shift-7 = [ 'move-node-to-workspace 7', 'workspace 7' ]
+alt-shift-8 = [ 'move-node-to-workspace 8', 'workspace 8' ]
+alt-shift-9 = [ 'move-node-to-workspace 9', 'workspace 9' ]
 
 # Workspace Back and Forth
 alt-tab = 'workspace-back-and-forth'
