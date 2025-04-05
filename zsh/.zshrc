@@ -5,6 +5,8 @@
 # fix autocompletions double initialization
 # fix fuzzy finder
 
+# alias roulette='[ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo "Click"'
+
 # -----------------------------------------------------------------------------
 # Interactive Shell Check - Only proceed if running interactively
 # -----------------------------------------------------------------------------

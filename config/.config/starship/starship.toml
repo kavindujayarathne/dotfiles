@@ -103,6 +103,11 @@ behind = '[ ](bold purple) '
 ahead = '[ ](bold purple) '
 format = '([$all_status$ahead_behind]($style))'
 
+[git_state]
+cherry_pick = "🍒"
+format = '[$state]($style) '
+style = "bold red"
+
 [golang]
 symbol = " "
 
