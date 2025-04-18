@@ -196,9 +196,9 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
-[[on-window-detected]]
-if.app-id = 'com.openai.chat'
-run = 'move-node-to-workspace 2'
+# [[on-window-detected]]
+# if.app-id = 'com.openai.chat'
+# run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
@@ -215,6 +215,10 @@ run = 'move-node-to-workspace 3'
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.Word"
+run = 'move-node-to-workspace 6'
 
 # Applications out of normal layout
 [[on-window-detected]]

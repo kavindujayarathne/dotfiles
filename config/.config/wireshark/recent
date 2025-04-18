@@ -95,15 +95,15 @@ gui.show_bytes_show: ASCII
 
 # Main window upper (or leftmost) pane size.
 # Decimal number.
-gui.geometry_main_upper_pane: 544
+gui.geometry_main_upper_pane: 738
 
 # Main window middle pane size.
 # Decimal number.
-gui.geometry_main_lower_pane: 709
+gui.geometry_main_lower_pane: 724
 
 # Main window master splitter state.
 # Hex byte string.
-gui.geometry_main_master_split: 000000ff000000010000000200000219000000e200ffffffff010000000200
+gui.geometry_main_master_split: 000000ff00000001000000020000014d0000001000ffffffff010000000200
 
 # Main window extra splitter state.
 # Hex byte string.
@@ -120,13 +120,13 @@ gui.geom.PreferencesDialog.splitter: 000000ff0000000100000002000000970000024001f
 # Packet list column pixel widths.
 # Each pair of strings consists of a column format and its pixel width.
 column.width:
-        %m, 66,
-        %t, 73,
-        %s, 214,
-        %d, 214,
+        %m, 82,
+        %t, 81,
+        %s, 307,
+        %d, 307,
         %p, 90,
         %L, 81,
-        %i, 670
+        %i, 854
 
 # Open conversation dialog tabs.
 # List of conversation names, e.g. "TCP", "IPv6".
