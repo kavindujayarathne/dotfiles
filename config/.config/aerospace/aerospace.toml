@@ -196,9 +196,9 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
-# [[on-window-detected]]
-# if.app-id = 'com.openai.chat'
-# run = 'move-node-to-workspace 2'
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
@@ -247,4 +247,8 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.utmapp.UTM'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ScreenSharing'
 run = 'layout floating'
