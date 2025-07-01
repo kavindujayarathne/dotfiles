@@ -7,9 +7,41 @@ return {
     opts = {
       provider = "openai",
       auto_suggestions_provider = "openai",
-      openai = {
-        -- endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o-mini",
+      providers = {
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+          timeout = 60000, -- maximum wait time for a response, in milliseconds
+          extra_request_body = {
+            temperature = 0, -- controls randomness / creativity of the response
+            max_completion_tokens = 8192, -- maximum number of tokens the model can generate in a response
+            -- reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+          },
+        },
+        -- ollama = {
+        --   endpoint = "http://127.0.0.1:11434",
+        --   timeout = 30000, -- Timeout in milliseconds
+        --   extra_request_body = {
+        --     options = {
+        --       temperature = 0.75,
+        --       num_ctx = 20480,
+        --       keep_alive = "5m",
+        --     },
+        --   },
+        -- },
+
+        -- Custom providers
+        -- groq = {
+        --   __inherited_from = "openai",
+        --   api_key_name = "GROQ_API_KEY",
+        --   endpoint = "https://api.groq.com/openai/v1/",
+        --   model = "llama-3.3-70b-versatile",
+        --   disable_tools = true,
+        --   extra_request_body = {
+        --     temperature = 1,
+        --     max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+        --   },
+        -- },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

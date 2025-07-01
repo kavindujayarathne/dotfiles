@@ -92,7 +92,6 @@ setopt hist_verify
 # Plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-
 bindkey -e
 bindkey '^l' autosuggest-accept
 # bindkey '^e' autosuggest-execute

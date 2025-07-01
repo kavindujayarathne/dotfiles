@@ -1,15 +1,27 @@
-# OS-specific files
+# system files
 .DS_Store
 Thumbs.db
 
-# IDEs and Editors
+# IDEs and editors
 .idea/
 .vscode/
 *.swp
+# !.vscode/extensions.json
+.idea
+# *.suo
+# *.ntvs*
+# *.njsproj
+# *.sln
+# *.sw?
 
-# Logs
+# logs
+logs
 *.log
+npm-debug.log*
 
-# Node.js dependencies
+# node.js dependencies
 node_modules/
+
+# env variables
+.env
 
