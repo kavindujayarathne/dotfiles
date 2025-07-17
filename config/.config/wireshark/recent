@@ -99,7 +99,7 @@ gui.geometry_main_upper_pane: 738
 
 # Main window middle pane size.
 # Decimal number.
-gui.geometry_main_lower_pane: 724
+gui.geometry_main_lower_pane: 360
 
 # Main window master splitter state.
 # Hex byte string.
