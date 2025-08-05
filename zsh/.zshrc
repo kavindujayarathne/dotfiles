@@ -49,6 +49,7 @@ alias nv="nvim"
 alias ll="ls -al"
 alias la="ls -a"
 alias caf="caffeinate -d"
+alias ephemeral-sesh="~/dotfiles/scripts/ephemeral-sesh-manager.sh"
 
 # Networking aliases
 
@@ -220,7 +221,7 @@ alias bl-bfs="brew list --built-from-source"
 alias bins="brew install"
 alias buins="brew uninstall"
 
-# Env variables
+# Add values inside $PATH variable
 paths_to_add=(
     "/opt/homebrew/opt/node@22/bin"
     "/opt/homebrew/opt/python@3.13/libexec/bin"

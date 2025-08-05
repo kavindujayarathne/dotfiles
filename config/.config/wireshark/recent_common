@@ -16,6 +16,8 @@ recent.capture_filter.en0: port 53
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
+recent.display_filter: tls
+recent.display_filter: nbns || mdns || llmnr
 recent.display_filter: tcp.port == 443 || udp.port == 443
 recent.display_filter: dns
 recent.display_filter: telnet
@@ -24,23 +26,21 @@ recent.display_filter: tcp.port == 23
 recent.display_filter: ip.src
 recent.display_filter: tcp.port == 5137
 recent.display_filter: bootp || dhcp
-recent.display_filter: _ws.col.info == "443"
-recent.display_filter: _ws.col.info == "443 → 61046 [ACK] Seq=6397 Ack=2214 Win=32256 Len=0 TSval=1750860145 TSecr=12700234"
 
 # Main window geometry.
 # Decimal numbers.
 gui.geometry_main_x: 0
 gui.geometry_main_y: 34
-gui.geometry_main_width: 720
+gui.geometry_main_width: 1440
 gui.geometry_main_height: 869
 
 # Main window maximized.
 # true or false (case-insensitive).
-gui.geometry_main_maximized: false
+gui.geometry_main_maximized: true
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb000300000000000000000022000002cf000003a2000000000000003e000002cf000003a2000000000000000005a0000000000000003e000002cf000003a2
+gui.geometry_main: 01d9d0cb0003000000000000000000220000059f000003a2000000000000003e0000059f000003a2000000000200000005a0000000000000003e0000059f000003a2
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).

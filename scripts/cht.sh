@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 languages=$(echo "python javascript typescript cpp c nodejs" | tr ' ' '\n')
 core_utils=$(echo "xargs find mv sed awk" | tr ' ' '\n')
 
