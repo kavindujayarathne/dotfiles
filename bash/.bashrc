@@ -6,6 +6,8 @@ case $- in
 *) return ;;
 esac
 
+set -o vi
+
 # ... Starship ...
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -30,7 +32,6 @@ alias lt-a3="eza -T --icons -a --level=3"
 eval "$(zoxide init bash)"
 
 # Env variables
-export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export EDITOR="nvim"
 # Bundle file location
 export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/config/.config/brewfile/Brewfile"

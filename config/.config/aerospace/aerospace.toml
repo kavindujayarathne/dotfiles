@@ -139,6 +139,16 @@ alt-shift-9 = [ 'move-node-to-workspace 9', 'workspace 9' ]
 # Workspace Back and Forth
 alt-tab = 'workspace-back-and-forth'
 
+# Temp (but useful)
+# alt-tab = 'focus-back-and-forth'
+# # Jump directly to window 0
+alt-1 = 'focus --dfs-index 0'
+# # Jump directly to window 1
+alt-2 = 'focus --dfs-index 1'
+# # Jump directly to window 2
+alt-3 = 'focus --dfs-index 2'
+
+
 # Move workspace to monitor
 # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
@@ -186,10 +196,6 @@ if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefoxdeveloperedition'
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
 
@@ -214,12 +220,20 @@ if.app-id = 'com.apple.Notes'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp' 
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = "com.microsoft.Word"
 run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
+run = 'move-node-to-workspace 9'
 
 # Applications out of normal layout
 [[on-window-detected]]

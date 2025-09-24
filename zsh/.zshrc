@@ -40,8 +40,6 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 autoload -Uz compinit && compinit
 
 # General aliases
-alias reloadZ="source ~/.zshrc"
-alias editZ="nvim ~/.zshrc"
 alias cl="clear"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -49,7 +47,7 @@ alias nv="nvim"
 alias ll="ls -al"
 alias la="ls -a"
 alias caf="caffeinate -d"
-alias ephemeral-sesh="~/dotfiles/scripts/ephemeral-sesh-manager.sh"
+alias browser="~/dotfiles/scripts/ephemeral-sesh-manager.sh"
 
 # Networking aliases
 
@@ -205,14 +203,7 @@ alias bi="brew info"
 alias bar="brew autoremove"
 alias bcl="brew cleanup"
 alias bcl-n="brew cleanup -n"
-alias bu="brew update"
-alias bug="brew upgrade"
-alias bo="brew outdated"
 alias buu="brew update && brew upgrade"
-alias bl="brew list"
-alias bl-f="brew list --formula"
-alias bl-c="brew list --cask"
-alias bl-v="brew list --versions"
 alias bl-vm="brew list --versions --multiple"
 alias bl-ior="brew list --installed-on-request"
 alias bl-iad="brew list --installed-as-dependency"
@@ -221,26 +212,19 @@ alias bl-bfs="brew list --built-from-source"
 alias bins="brew install"
 alias buins="brew uninstall"
 
-# Add values inside $PATH variable
-paths_to_add=(
-    "/opt/homebrew/opt/node@22/bin"
-    "/opt/homebrew/opt/python@3.13/libexec/bin"
-    "/opt/homebrew/opt/curl/bin"
-    # Add more paths here as needed
-)
-
-# Loop through each path and add it to PATH if not already present
-for dir in "${paths_to_add[@]}"; do
-    [[ ":$PATH:" != *":$dir:"* ]] && export PATH="$dir:$PATH"
-done
-
-# For compilers to find node@22 you may need to set:
-# export LDFLAGS="-L/opt/homebrew/opt/node@22/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/node@22/include"
-
-
 # Bundle file location
 export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
+
+# keg-only utils
+typeset -U path PATH
+
+prepend_paths=(
+  /opt/homebrew/opt/curl/bin
+  /opt/homebrew/opt/sqlite/bin
+  # add as many as you want
+)
+
+path=($prepend_paths $path)
 
 # -----------------------------------------------------------------------------
 # Atuin
