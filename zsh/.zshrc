@@ -1,12 +1,3 @@
-#TODO:
-# fix reloadZ and editZ
-# fix eval thing
-# fix caffeinate -d for print message
-# fix autocompletions double initialization
-# fix fuzzy finder
-
-# alias roulette='[ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo "Click"'
-
 # -----------------------------------------------------------------------------
 # Interactive Shell Check - Only proceed if running interactively
 # -----------------------------------------------------------------------------
@@ -48,6 +39,7 @@ alias ll="ls -al"
 alias la="ls -a"
 alias caf="caffeinate -d"
 alias browser="~/dotfiles/scripts/ephemeral-sesh-manager.sh"
+alias rm="rm -I"
 
 # Networking aliases
 
@@ -61,32 +53,26 @@ function nvs() {
 }
 
 # Don't ask if user is sure when running rm with wildcards
-setopt rmstarsilent
-
+# setopt rmstarsilent
 # If wildcard pattern has no matches, return an empty string
 setopt no_nomatch
 
-# Functions
-#TODO: In the future;
-# We can add functions to performe multiple commands at once.
-# Ex: 
-# gquick() {
-#   git add .
-#   git commit -m "$1"
-# }
-# Usage: gquick "commit-message"
-
 # History setup
 HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000
 SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
 
-# To remove histroy when logout
-# export HISTSIZE=0
+# truncate file + start a fresh history session
+alias hist-purge=': > "$HISTFILE"; fc -p; echo "zsh history cleared (restart tab for best effect)"'
+
+# unset HISTFILE
+# export HISTSIZE=5000
+# export SAVEHIST=0
 
 # Plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -168,8 +154,6 @@ alias gd="git diff"
 # FZF (better search)
 # -----------------------------------------------------------------------------
 source <(fzf --zsh)
-
-alias lls="ll | fzf"
 
 # -----------------------------------------------------------------------------
 # eza (better version of ls)

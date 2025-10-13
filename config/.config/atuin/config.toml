@@ -163,6 +163,9 @@ enter_accept = true
 ## Alternatively, set env NO_MOTION=true
 # prefers_reduced_motion = false
 
+## disable auto import so Atuin won't re-import your .zsh_history each time
+auto_import = false
+
 [stats]
 ## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
 # common_subcommands = [
@@ -233,3 +236,4 @@ records = true
 
 ## The port that should be used for TCP on non unix systems
 # tcp_port = 8889
+auto_import = false

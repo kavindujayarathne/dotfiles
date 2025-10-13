@@ -2,7 +2,7 @@
 # ROOTS=("$HOME" "/Applications" "/Library" "/private/var/folders" "/private/var/root/Library" "/System/Volumes/Data")
 # ROOTS=("$HOME")
 # EXCLUDES=("$HOME/Developer")      # add more if noisy
-USE_TRASH=1 # set 1 to prefer trash
+# USE_TRASH=0
 # AUTO_BREWFILE=${AUTO_BREWFILE:-1} # set 0 to disable Brewfile dump
 # BREWFILE_PATH=${BREWFILE_PATH:-"$HOME/.config/brewfile/Brewfile"}
 
@@ -13,7 +13,7 @@ USE_TRASH=1 # set 1 to prefer trash
 
 # Use cached index even when a query is supplied (fast, default=1).
 # Set to 0 in ~/.config/macops/config.sh to force live `brew search` for queries.
-USE_CACHE_FOR_QUERY=0
+# USE_CACHE_FOR_QUERY=0
 
 # AUTO_SCAN_AFTER_UNINSTALL=0
 # AUTO_BREWFILE=0
