@@ -182,19 +182,12 @@ eval "$(zoxide init zsh)"
 # Homebrew (package manager)
 # -----------------------------------------------------------------------------
 # aliases
-alias bs="brew search"
-alias bi="brew info"
-alias bar="brew autoremove"
 alias bcl="brew cleanup"
-alias bcl-n="brew cleanup -n"
 alias buu="brew update && brew upgrade"
-alias bl-vm="brew list --versions --multiple"
 alias bl-ior="brew list --installed-on-request"
 alias bl-iad="brew list --installed-as-dependency"
 alias bl-pfb="brew list --poured-from-bottle"
 alias bl-bfs="brew list --built-from-source"
-alias bins="brew install"
-alias buins="brew uninstall"
 
 # Bundle file location
 export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
