@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-cd ~/Developer/personal-blog-snapshot
-cat personal-blog.tar.gz.part-* >personal-blog.tar.gz
-tar -xzf personal-blog.tar.gz -C ~/Developer/

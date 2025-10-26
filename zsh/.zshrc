@@ -168,7 +168,7 @@ alias lt-a3="eza -T --icons -a --level=3"
 # -----------------------------------------------------------------------------
 # bat (better version of cat)
 # -----------------------------------------------------------------------------
-export BAT_THEME="catppuccin-mocha"
+# export BAT_THEME="catppuccin-mocha"
 
 # aliases
 alias cat="bat"
