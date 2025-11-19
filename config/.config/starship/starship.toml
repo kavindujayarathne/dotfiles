@@ -10,7 +10,7 @@ format = """$custom $directory$character"""
 right_format = """$all"""
 
 # Default is 500ms
-# command_timeout = 1000
+command_timeout = 1000
 
 [custom.os]
 #command = 'uname -s'
@@ -151,6 +151,7 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
+# disabled = true
 symbol = " "
 
 [ocaml]

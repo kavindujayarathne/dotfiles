@@ -18,4 +18,5 @@
 # AUTO_SCAN_AFTER_UNINSTALL=0
 # AUTO_BREWFILE=0
 
+#TODO: add mobile documents here
 EXCLUDES=("/Library/Developer" "$HOME/Developer" "$HOME/dotfiles" "$HOME/.Trash")
