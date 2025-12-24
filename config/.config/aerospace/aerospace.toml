@@ -1,3 +1,7 @@
+# Config version for compatibility and deprecations
+# Fallback value (if you omit the key): config-version = 1
+config-version = 2
+
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
@@ -17,9 +21,6 @@ start-at-login = true
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-#TODO: What does the below command means?
-# non-empty-workspaces-root-containers-layout-on-startup = 'smart'
-
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
 # accordion-padding = 30
@@ -33,14 +34,33 @@ default-root-container-layout = 'tiles'
 #               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
-# Possible values: (qwerty|dvorak)
-key-mapping.preset = 'qwerty'
-
 # Mouse follows focus when focused monitor changes
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = ["move-mouse window-lazy-center"]
+
+# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
+# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
+# Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
+automatically-unhide-macos-hidden-apps = false
+
+# List of workspaces that should stay alive even when they contain no windows,
+# even when they are invisible.
+# This config version is only available since 'config-version = 2'
+# Fallback value (if you omit the key): persistent-workspaces = []
+# persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+persistent-workspaces = []
+
+# A callback that runs every time binding mode changes
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+# See: https://nikitabobko.github.io/AeroSpace/commands#mode
+# on-mode-changed = []
+
+# Possible values: (qwerty|dvorak|colemak)
+# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+    preset = 'qwerty'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -48,47 +68,48 @@ on-focus-changed = ["move-mouse window-lazy-center"]
 # - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
-#                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+#                 See:
+#                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-# inner.horizontal = 5
-# inner.vertical =   5
-# outer.left =       5
-# outer.bottom =     5
-# outer.top =        5
-# outer.right =      5
+    inner.horizontal = 0
+    inner.vertical =   0
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
 
-inner.horizontal = 0
-inner.vertical =   0
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
-# Main binding mode
+# 'main' binding mode declaration
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
 
-# All possible keys:
-# - Letters.        a, b, c, ..., z
-# - Numbers.        0, 1, 2, ..., 9
-# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
-# - F-keys.         f1, f2, ..., f20
-# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
-#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
-# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
-#                   keypadMinus, keypadMultiply, keypadPlus
-# - Arrows.         left, down, up, right
+    # All possible keys:
+    # - Letters.        a, b, c, ..., z
+    # - Numbers.        0, 1, 2, ..., 9
+    # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+    # - F-keys.         f1, f2, ..., f20
+    # - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon,
+    #                   backtick, leftSquareBracket, rightSquareBracket, space, enter, esc,
+    #                   backspace, tab, pageUp, pageDown, home, end, forwardDelete,
+    #                   sectionSign (ISO keyboards only, european keyboards only)
+    # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+    #                   keypadMinus, keypadMultiply, keypadPlus
+    # - Arrows.         left, down, up, right
 
-# All possible modifiers: cmd, alt, ctrl, shift
+    # All possible modifiers: cmd, alt, ctrl, shift
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-#alt-enter = '''exec-and-forget osascript -e '
-#tell application "Terminal"
-#    do script
-#    activate
-#end tell'
-#'''
+    # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
+
+    # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
+    # You can uncomment the following lines to open up terminal with alt + enter shortcut
+    # (like in i3)
+    # alt-enter = '''exec-and-forget osascript -e '
+    # tell application "Terminal"
+    #     do script
+    #     activate
+    # end tell'
+    # '''
 
 # Layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -106,11 +127,31 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-#TODO: Find what this is?
-#alt-shift-n = 'split opposite'
-
 # Full Screen
 alt-f= 'fullscreen'
+
+# stylish workspaces
+# alt-y = 'workspace ●○○○○○○○○○'
+# alt-u = 'workspace ○●○○○○○○○○'
+# alt-i = 'workspace ○○●○○○○○○○'
+# alt-o = 'workspace ○○○●○○○○○○'
+# alt-p = 'workspace ○○○○●○○○○○'
+# alt-6 = 'workspace ○○○○○●○○○○'
+# alt-7 = 'workspace ○○○○○○●○○○'
+# alt-8 = 'workspace ○○○○○○○●○○'
+# alt-9 = 'workspace ○○○○○○○○●○'
+# alt-0 = 'workspace ○○○○○○○○○●'
+#
+# alt-shift-y = [ 'move-node-to-workspace ●○○○○○○○○○', 'workspace ●○○○○○○○○○' ]
+# alt-shift-u = [ 'move-node-to-workspace ○●○○○○○○○○', 'workspace ○●○○○○○○○○' ]
+# alt-shift-i = [ 'move-node-to-workspace ○○●○○○○○○○', 'workspace ○○●○○○○○○○' ]
+# alt-shift-o = [ 'move-node-to-workspace ○○○●○○○○○○', 'workspace ○○○●○○○○○○' ]
+# alt-shift-p = [ 'move-node-to-workspace ○○○○●○○○○○', 'workspace ○○○○●○○○○○' ]
+# alt-shift-6 = [ 'move-node-to-workspace ○○○○○●○○○○', 'workspace ○○○○○●○○○○' ]
+# alt-shift-7 = [ 'move-node-to-workspace ○○○○○○●○○○', 'workspace ○○○○○○●○○○' ]
+# alt-shift-8 = [ 'move-node-to-workspace ○○○○○○○●○○', 'workspace ○○○○○○○●○○' ]
+# alt-shift-9 = [ 'move-node-to-workspace ○○○○○○○○●○', 'workspace ○○○○○○○○●○' ]
+# alt-shift-0 = [ 'move-node-to-workspace ○○○○○○○○○●', 'workspace ○○○○○○○○○●' ]
 
 # Workspaces
 alt-y = 'workspace 1'
@@ -122,6 +163,7 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
 
 # Move node to workspaces
 # alt-shift-y = 'move-node-to-workspace 1 --focus-follows-window' # if you want to handle both in single command
@@ -135,9 +177,13 @@ alt-shift-6 = [ 'move-node-to-workspace 6', 'workspace 6' ]
 alt-shift-7 = [ 'move-node-to-workspace 7', 'workspace 7' ]
 alt-shift-8 = [ 'move-node-to-workspace 8', 'workspace 8' ]
 alt-shift-9 = [ 'move-node-to-workspace 9', 'workspace 9' ]
+alt-shift-0 = [ 'move-node-to-workspace 10', 'workspace 10' ]
 
 # Workspace Back and Forth
 alt-tab = 'workspace-back-and-forth'
+
+# Move workspace to monitor
+# alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # Temp (but useful)
 # alt-tab = 'focus-back-and-forth'
@@ -148,24 +194,10 @@ alt-2 = 'focus --dfs-index 1'
 # # Jump directly to window 2
 alt-3 = 'focus --dfs-index 2'
 
-
-# Move workspace to monitor
-# alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-
 # Keybindings for different modes
 alt-shift-semicolon = 'mode service'
 alt-r = 'mode resize'
-
-# Launch applications using AeroSpace
-# -n = Open a new instance of an application
-# -a = To target the application directly
-alt-m = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Mail..." && open -a /System/Applications/Mail.app'
-alt-b = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Zen Browser..." && open -a /Applications/"Zen Browser.app"'
-alt-t = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app'
-alt-e = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Finder..." && open -a /System/Library/CoreServices/Finder.app'
-alt-n = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Notion..." && open -a /Applications/Notion.app'
-alt-s = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app'
-alt-a = 'exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Activity Monitor..." && open -a /System/Applications/Utilities/"Activity Monitor.app"'
+alt-a = 'mode app-launcher'
 
 # Modes
 [mode.service.binding]
@@ -174,21 +206,32 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 # backspace = ['close-all-windows-but-current', 'mode main']
 
+# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+# s = ['layout sticky tiling', 'mode main']
+
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [mode.resize.binding]
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
+j = 'resize smart -50'
+k = 'resize smart +50'
 0 = 'balance-sizes'
 esc = 'mode main'
 
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-# s = ['layout sticky tiling', 'mode main']
+[mode.app-launcher.binding]
+# Launch applications using AeroSpace
+# -n = Open a new instance of an application
+# -a = To target the application directly
+m = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Mail..." && open -a /System/Applications/Mail.app', 'mode main']
+b = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Zen Browser..." && open -a /Applications/"Zen Browser.app"', 'mode main']
+t = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app', 'mode main']
+e = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Finder..." && open -a /System/Library/CoreServices/Finder.app', 'mode main']
+n = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Notion..." && open -a /Applications/Notion.app', 'mode main']
+s = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app', 'mode main']
+a = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Activity Monitor..." && open -a /System/Applications/Utilities/"Activity Monitor.app"', 'mode main']
+esc = 'mode main'
 
 # To open specific apps on specific workspaces
 [[on-window-detected]]

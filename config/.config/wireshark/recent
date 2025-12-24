@@ -1,4 +1,4 @@
-# Recent settings file for Wireshark 4.4.3.
+# Recent settings file for Wireshark 4.6.0.
 #
 # This file is regenerated each time Wireshark is quit
 # and when changing configuration profile.
@@ -155,3 +155,14 @@ gui.additional_toolbar_show:
 # Interface Toolbars show.
 # List of interface toolbars to show.
 gui.interface_toolbar_show: 
+
+# TCP Stream Graphs Moving Average Window Size.
+gui.tsd_ma_window_size: 1
+
+# TCP Stream Graphs Dialog Throughput show (hide).
+# true or false (case-insensitive).
+gui.tsd_throughput_show: true
+
+# TCP Stream Graphs Dialog Goodput show (hide).
+# true or false (case-insensitive).
+gui.tsd_goodput_show: false
