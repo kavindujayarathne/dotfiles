@@ -2,7 +2,7 @@
 # ROOTS=("$HOME" "/Applications" "/Library" "/private/var/folders" "/private/var/root/Library" "/System/Volumes/Data")
 # ROOTS=("$HOME")
 # EXCLUDES=("$HOME/Developer")      # add more if noisy
-# USE_TRASH=0
+USE_TRASH=0
 # AUTO_BREWFILE=${AUTO_BREWFILE:-1} # set 0 to disable Brewfile dump
 # BREWFILE_PATH=${BREWFILE_PATH:-"$HOME/.config/brewfile/Brewfile"}
 
