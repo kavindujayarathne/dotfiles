@@ -159,7 +159,7 @@ source <(fzf --zsh)
 # eza (better version of ls)
 # -----------------------------------------------------------------------------
 # aliases
-alias ls="eza --color=always --no-filesize --icons=always --no-user"
+alias ls="eza --color=always --no-filesize --group --icons=always"
 alias lt="eza -T --icons"
 alias lt-a1="eza -T --icons -a --level=1"
 alias lt-a2="eza -T --icons -a --level=2"

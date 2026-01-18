@@ -2,7 +2,7 @@
 # ROOTS=("$HOME" "/Applications" "/Library" "/private/var/folders" "/private/var/root/Library" "/System/Volumes/Data")
 # ROOTS=("$HOME")
 # EXCLUDES=("$HOME/Developer")      # add more if noisy
-USE_TRASH=0
+# USE_TRASH=0
 # AUTO_BREWFILE=${AUTO_BREWFILE:-1} # set 0 to disable Brewfile dump
 # BREWFILE_PATH=${BREWFILE_PATH:-"$HOME/.config/brewfile/Brewfile"}
 
@@ -18,5 +18,11 @@ USE_TRASH=0
 # AUTO_SCAN_AFTER_UNINSTALL=0
 # AUTO_BREWFILE=0
 
-#TODO: add mobile documents here
-EXCLUDES=("/Library/Developer" "$HOME/Developer" "$HOME/dotfiles" "$HOME/.Trash")
+EXCLUDES=(
+  "/Library/Developer"
+  "$HOME/Developer"
+  "$HOME/dotfiles"
+  "$HOME/.Trash"
+  "$HOME/Library/Mobile Documents/"
+  "/opt/homebrew/Library/Taps/homebrew/homebrew-cask/"
+)
