@@ -228,7 +228,7 @@ m = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching M
 b = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Zen Browser..." && open -a /Applications/"Zen.app"', 'mode main']
 t = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app', 'mode main']
 e = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Finder..." && open -a /System/Library/CoreServices/Finder.app', 'mode main']
-n = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Notion..." && open -a /Applications/Notion.app', 'mode main']
+n = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Obsidian..." && open -a /Applications/Obsidian.app', 'mode main']
 s = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app', 'mode main']
 a = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Activity Monitor..." && open -a /System/Applications/Utilities/"Activity Monitor.app"', 'mode main']
 esc = 'mode main'
@@ -246,16 +246,12 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
-# [[on-window-detected]]
-# if.app-id = 'com.openai.chat'
-# run = 'move-node-to-workspace 2'
-
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'notion.id'
+if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
