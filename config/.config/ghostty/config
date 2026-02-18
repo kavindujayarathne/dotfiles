@@ -1,0 +1,38 @@
+# Splitting into multiple files
+# config-file = some/relative/sub/config
+# config-file = ?optional/config
+# config-file = /absolute/path/config
+
+# font
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 16
+
+# theme
+theme = "catppuccin-mocha.conf"
+
+# background
+background-opacity = 0.6
+background-blur = true
+
+# cursor
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-click-to-move = true
+mouse-hide-while-typing = true
+
+# window
+window-padding-y = 12,5
+window-padding-x = 14,5
+window-decoration = none
+# macos-titlebar-style = hidden
+window-inherit-working-directory = true
+window-inherit-font-size = false
+quit-after-last-window-closed = true
+
+# Keybindings
+keybind = ctrl+i=text:\x09
+# default one is cmd+shift+,
+# reload_config = ""
+
+
