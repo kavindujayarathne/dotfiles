@@ -7,6 +7,7 @@ import = [
 [env]
 TERM = "xterm-256color"
 
+# Window
 [window]
 padding = {x = 10, y =10}
 # dynamic_padding = true
@@ -16,25 +17,17 @@ opacity = 0.8
 blur = true
 option_as_alt = "both"
 
+# Font
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
 size = 16
 
 # Keybindings
-# [keyboard]
-# --- Default ---
-# Control + h = Backspace
-# Control + d = Forward deletion
-# Control + f = Forward navigation
-# Control + g = New prompt
-# Control + l = Clear terminal
-# Control + u = Clear entire command line
-# bindings = [
-#   { key = "H",  mods = "Control|Shift", chars = "\u001b[D" }, # Backward Navigation
-#   { key = "L", mods = "Control|Shift", chars = "\u001b[C" },   # Forward Navigation
-#   { key = "Space",  mods = "Control", action = "ToggleViMode" },
-#   { key = "Alt", mods = "None", chars = "\u001b[C" } # Send <C-S-l>
-# ]
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
 
+# Debugging
 [debug]
 render_timer = false

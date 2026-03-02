@@ -1,22 +1,31 @@
-# --- config (edit to taste or source ~/.config/macops/config.sh) ---
-# ROOTS=("$HOME" "/Applications" "/Library" "/private/var/folders" "/private/var/root/Library" "/System/Volumes/Data")
-# ROOTS=("$HOME")
-# EXCLUDES=("$HOME/Developer")      # add more if noisy
-# USE_TRASH=0
-# AUTO_BREWFILE=${AUTO_BREWFILE:-1} # set 0 to disable Brewfile dump
-# BREWFILE_PATH=${BREWFILE_PATH:-"$HOME/.config/brewfile/Brewfile"}
+# --- config for macpak---
 
-# Cache dir (XDG-aware, user-overridable)
-# CACHE_DIR="$HOME/test"
-# INDEX_PATH="$HOME/test/index.tsv"
-# INDEX_TTL_SECS="${INDEX_TTL_SECS:-86400}" # 24h
+# Brewfile integration
+AUTO_BREWFILE=1 # set 0 to disable Brewfile dump
+BREWFILE_PATH="$HOME/.config/brewfile/Brewfile"
 
-# Use cached index even when a query is supplied (fast, default=1).
-# Set to 0 in ~/.config/macops/config.sh to force live `brew search` for queries.
-# USE_CACHE_FOR_QUERY=0
+# Caching
+INDEX_PATH="$HOME/.cache/macpak/index.tsv"
+INDEX_TTL_SECS=86400 #24h
+# use cached index even when a query is supplied (fast, default=1).
+# set to 0 in ~/.config/macops/config.sh to force live `brew search` for queries.
+USE_CACHE_FOR_QUERY=1
 
-# AUTO_SCAN_AFTER_UNINSTALL=0
-# AUTO_BREWFILE=0
+# Leftovers scanning
+AUTO_SCAN_AFTER_UNINSTALL=1
+
+# ROOTS=(
+#   "/Applications"
+#   "/Library"
+#   "/private/etc"
+#   "/private/var/db/receipts"
+#   "/private/var/root/Library"
+#   "/private/var/log"
+#   "/opt/homebrew"
+#   "/usr/local"
+#   "/Users/Shared"
+#   "$HOME"
+# )
 
 EXCLUDES=(
   "/Library/Developer"
