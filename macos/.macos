@@ -23,8 +23,8 @@ done 2>/dev/null &
 
 # Set computer name
 sudo scutil --set ComputerName "Kavindu Jayarathne"
-sudo scutil --set HostName "Kavindu-Jayarathne"
-sudo scutil --set LocalHostName "Kavindu-Jayarathne"
+sudo scutil --set HostName "kavindu-jayarathne"
+sudo scutil --set LocalHostName "kavindu-jayarathne"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Kavindu-Jayarathne"
 
 # Disable the sound effects on boot

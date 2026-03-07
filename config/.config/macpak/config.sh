@@ -1,32 +1,40 @@
-# --- config for macpak---
+# config.sh
+
+# Deletion
+# 1 = prefer safe deletes via Trash, 0 = permanent removal (rm -rf)
+USE_TRASH=1
 
 # Brewfile integration
-AUTO_BREWFILE=1 # set 0 to disable Brewfile dump
+# 1 = auto-update Brewfile after installs and uninstalls, 0 = disable
+AUTO_BREWFILE=1
+# Override to change the Brewfile location
 BREWFILE_PATH="$HOME/.config/brewfile/Brewfile"
 
 # Caching
+# Override to change the cache location
 INDEX_PATH="$HOME/.cache/macpak/index.tsv"
-INDEX_TTL_SECS=86400 #24h
-# use cached index even when a query is supplied (fast, default=1).
-# set to 0 in ~/.config/macops/config.sh to force live `brew search` for queries.
+# Cache freshness window in seconds (default: 86400 = 24h)
+INDEX_TTL_SECS=86400
+# 1 = use cached index for queries, 0 = query Homebrew live
 USE_CACHE_FOR_QUERY=1
 
 # Leftovers scanning
+# 1 = scan for leftover files after uninstall, 0 = skip
 AUTO_SCAN_AFTER_UNINSTALL=1
-
-# ROOTS=(
-#   "/Applications"
-#   "/Library"
-#   "/private/etc"
-#   "/private/var/db/receipts"
-#   "/private/var/root/Library"
-#   "/private/var/log"
-#   "/opt/homebrew"
-#   "/usr/local"
-#   "/Users/Shared"
-#   "$HOME"
-# )
-
+# Paths to scan for leftovers. Override to add or remove scan directories
+ROOTS=(
+  "/Applications"
+  "/Library"
+  "/private/etc"
+  "/private/var/db/receipts"
+  "/private/var/root/Library"
+  "/private/var/log"
+  "/opt/homebrew"
+  "/usr/local"
+  "/Users/Shared"
+  "$HOME"
+)
+# Paths to exclude from leftover scans (empty by default)
 EXCLUDES=(
   "/Library/Developer"
   "$HOME/Developer"
