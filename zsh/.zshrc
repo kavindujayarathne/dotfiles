@@ -177,12 +177,13 @@ alias cat="bat"
 # Zoxide (better cd)
 # -----------------------------------------------------------------------------
 eval "$(zoxide init zsh)"
+alias cd="z"
 
 # -----------------------------------------------------------------------------
 # Homebrew (package manager)
 # -----------------------------------------------------------------------------
 # aliases
-alias bcl="brew cleanup"
+alias bcl="brew cleanup -s"
 alias buu="brew update && brew upgrade"
 alias bl-ior="brew list --installed-on-request"
 alias bl-iad="brew list --installed-as-dependency"
@@ -210,3 +211,14 @@ export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 
 bindkey '^R' atuin-search
+
+
+# -----------------------------------------------------------------------------
+# macpak
+# -----------------------------------------------------------------------------
+
+alias search="macpak search"
+alias list="macpak list"
+alias zap="macpak zap"
+alias doctor="macpak doctor"
+alias refresh="macpak cache-refresh"
