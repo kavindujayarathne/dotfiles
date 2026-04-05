@@ -1,0 +1,23 @@
+{
+  "hotkey": {
+    "key": "P",
+    "modifiers": [
+      "ctrl",
+      "shift"
+    ]
+  },
+  "profiles": [
+    {
+      "name": "Browsing",
+      "path": "w7z3cco5.Default (release)"
+    },
+    {
+      "name": "Public",
+      "path": "ompHSXvF.Profile 1"
+    },
+    {
+      "name": "Private",
+      "path": "ABvE1srt.Profile 2"
+    }
+  ]
+}

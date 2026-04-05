@@ -30,6 +30,9 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # Initializing autocompletions
 autoload -Uz compinit && compinit
 
+alias ip="curl ifconfig.me -4; echo"
+alias ip-all="curl ifconfig.me/all"
+
 # General aliases
 alias cl="clear"
 alias ..="cd .."
@@ -41,8 +44,7 @@ alias caf="caffeinate -d"
 alias browser="~/dotfiles/scripts/ephemeral-sesh-manager.sh"
 alias rm="rm -I"
 
-# Networking aliases
-
+# Functions
 function nvs() {
   local config=$(fd --max-depth 1 --type d --glob 'nvim-*' ~/.config | xargs -n 1 basename | \
     fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
@@ -79,12 +81,12 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey -e
 bindkey '^l' autosuggest-accept
-# bindkey '^e' autosuggest-execute
 bindkey '^f' autosuggest-fetch
-# bindkey '^u' autosuggest-toggle
 bindkey '^e' vi-forward-word
 # bindkey '^k' up-line-or-search
 # bindkey '^j' down-line-or-search
+# bindkey '^e' autosuggest-execute
+# bindkey '^u' autosuggest-toggle
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -108,7 +110,6 @@ function y() {
 # -----------------------------------------------------------------------------
 # aliases
 alias t="tmux"
-alias t-ls="tmux ls"
 # alias dotfiles="tmux new -s 'testing' -c '$HOME/dotfiles'"
 
 # -----------------------------------------------------------------------------
@@ -117,38 +118,27 @@ alias t-ls="tmux ls"
 # aliases
 alias a-la="aerospace list-apps"
 
-# ... Git (version control) ...
+# -----------------------------------------------------------------------------
+# Git (version control)
+# -----------------------------------------------------------------------------
 # aliases
 alias gint="git init"
 alias gs="git status"
-alias gct='git commit -m'
-alias gl="git log"
-alias gl-g="git log --graph"
 alias ga="git add"
-alias grs-s="git restore --staged"
-alias gb="git branch"
-alias gco-b="git checkout -b"
-alias gco="git checkout"
-alias gb-d="git branch -d"
-alias gb-D="git branch -D" # Force delete if a branch is not fully merged
-alias grm-c="git rm -r --cached"
-alias gsw="git switch"
-alias gsw-c="git switch -c"
-alias grst-H="git reset HEAD -- "
-alias grs="git restore"
-alias gst="git stash"
-alias gst-a="git stash apply"
-alias gst-l="git stash list"
-alias gst-d="git stash drop"
-alias gst-c="git stash clear"
-alias gcl="git clean -fd"
-alias grl="git reflog"
-alias grst="git reset"           # git reset <commit hash>
-alias grst-s="git reset --soft"  # git reset --soft <commit hash>
-alias grst-h="git reset --hard"  # git reset --hard <commit hash>
-alias gmg="git merge"
-alias gmg-a="git merge --abort"
-alias gd="git diff"
+alias gaa="git add all"
+alias gct="git commit -m"
+alias gp="git push"
+alias gpfl!="git push --force-with-lease"
+alias gl="git log"
+alias glo="git log --oneline"
+alias glg="git log --graph"
+
+# functions
+function acp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
 
 # -----------------------------------------------------------------------------
 # FZF (better search)
@@ -222,3 +212,4 @@ alias list="macpak list"
 alias zap="macpak zap"
 alias doctor="macpak doctor"
 alias refresh="macpak cache-refresh"
+eval "$(tv init zsh)"
