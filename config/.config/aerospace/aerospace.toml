@@ -204,7 +204,7 @@ alt-a = 'mode app-launcher'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-# backspace = ['close-all-windows-but-current', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 # s = ['layout sticky tiling', 'mode main']
@@ -309,4 +309,8 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.ScreenSharing'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.superduper.superwhisper'
 run = 'layout floating'
