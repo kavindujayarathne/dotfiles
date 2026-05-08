@@ -1,4 +1,4 @@
-# Common recent settings file for Wireshark 4.6.0.
+# Common recent settings file for Wireshark 4.6.5.
 #
 # This file is regenerated each time Wireshark is quit
 # and when changing configuration profile.
@@ -84,6 +84,29 @@ gui.search_multiple_occurs: false
 # Find packet search type.
 # One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
 gui.search_type: DISPLAY_FILTER
+
+# Welcome page sidebar Learn section visible.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.learn_visible: true
+
+# Welcome page sidebar Tips section visible.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_visible: true
+
+# Welcome page sidebar Tips event slides.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_events: true
+
+# Welcome page sidebar Tips sponsorship slides.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_sponsorship: true
+
+# Welcome page sidebar Tips tip-of-the-day slides.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_tips: true
+
+# Welcome page sidebar Tips slide auto-advance interval in seconds.
+gui.welcome_page.sidebar.tips_interval: 8
 
 # Geometry and maximized state of ExpertInfoDialog window.
 # Decimal integers.
