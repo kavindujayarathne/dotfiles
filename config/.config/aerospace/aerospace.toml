@@ -270,6 +270,16 @@ run = 'move-node-to-workspace 5'
 if.app-id = "com.microsoft.Word"
 run = 'move-node-to-workspace 6'
 
+# Netflix
+[[on-window-detected]]
+if.app-id = "com.apple.Safari.WebApp.F891B148-9BF8-4974-8754-E5BC1CB427BC"
+run = 'move-node-to-workspace 7'
+
+# Prime Video
+[[on-window-detected]]
+if.app-id = "com.apple.Safari.WebApp.D6614A35-61A5-430F-8812-151FAE71D3E9"
+run = 'move-node-to-workspace 7'
+
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 run = 'move-node-to-workspace 9'
