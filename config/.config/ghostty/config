@@ -6,12 +6,13 @@
 # font
 font-family = "MesloLGS Nerd Font Mono"
 font-size = 16
+font-thicken = true
 
 # theme
 theme = "catppuccin-mocha.conf"
 
 # background
-background-opacity = 0.6
+# background-opacity = 0.6
 background-blur = true
 
 # cursor
@@ -34,5 +35,3 @@ quit-after-last-window-closed = true
 keybind = ctrl+i=text:\x09
 # default one is cmd+shift+,
 # reload_config = ""
-
-
