@@ -13,7 +13,6 @@ padding = {x = 10, y =10}
 # dynamic_padding = true
 decorations = "Buttonless"
 # opacity = 0.8
-# opacity = 0.7
 blur = true
 option_as_alt = "both"
 

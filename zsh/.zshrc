@@ -182,6 +182,8 @@ alias bl-bfs="brew list --built-from-source"
 # Bundle file location
 export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
 
+export HOMEBREW_REQUIRE_TAP_TRUST=1
+
 # keg-only utils
 typeset -U path PATH
 

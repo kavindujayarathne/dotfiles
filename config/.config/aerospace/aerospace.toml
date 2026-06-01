@@ -226,7 +226,7 @@ esc = 'mode main'
 # -a = To target the application directly
 m = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Mail..." && open -a /System/Applications/Mail.app', 'mode main']
 b = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Zen Browser..." && open -a /Applications/"Zen.app"', 'mode main']
-t = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Alacritty..." && open -a /Applications/Alacritty.app', 'mode main']
+t = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Ghostty..." && open -a /Applications/Ghostty.app', 'mode main']
 e = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Finder..." && open -a /System/Library/CoreServices/Finder.app', 'mode main']
 n = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Obsidian..." && open -a /Applications/Obsidian.app', 'mode main']
 s = ['exec-and-forget terminal-notifier -title "Aerospace" -message "Launching Safari..." && open -a /Applications/Safari.app', 'mode main']
@@ -235,7 +235,7 @@ esc = 'mode main'
 
 # To open specific apps on specific workspaces
 [[on-window-detected]]
-if.app-id = 'org.alacritty'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
@@ -279,6 +279,10 @@ run = 'move-node-to-workspace 7'
 [[on-window-detected]]
 if.app-id = "com.apple.Safari.WebApp.D6614A35-61A5-430F-8812-151FAE71D3E9"
 run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = "com.vmware.fusion"
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
