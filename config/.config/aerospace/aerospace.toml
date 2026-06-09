@@ -281,10 +281,6 @@ if.app-id = "com.apple.Safari.WebApp.D6614A35-61A5-430F-8812-151FAE71D3E9"
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
-if.app-id = "com.vmware.fusion"
-run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 run = 'move-node-to-workspace 9'
 
